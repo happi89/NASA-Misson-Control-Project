@@ -24,5 +24,7 @@
   "bugs": {
     "url": "https://github.com/happi89/NASA-Misson-Control-Project/issues"
   },
-  "homepage": "https://github.com/happi89/NASA-Misson-Control-Project#readme"
+  "homepage": "https://github.com/happi89/NASA-Misson-Control-Project#readme",
+  "dependencies": {
+  }
 }
