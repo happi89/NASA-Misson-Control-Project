@@ -15,7 +15,7 @@ mongoose.connection.once('open', () => {
 });
 
 mongoose.connection.on('error', (error) => {
-	console.error(ifError);
+	console.error(error);
 });
 
 async function startServer() {
