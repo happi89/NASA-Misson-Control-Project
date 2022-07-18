@@ -10,7 +10,7 @@ const app = express();
 
 app.use(
 	cors({
-		origin: 'https://nasa-mission-control-api.herokuapp.com/',
+		origin: 'http://localhost:3000',
 	})
 );
 

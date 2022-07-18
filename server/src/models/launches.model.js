@@ -36,19 +36,6 @@ function addNewLaunch(launch) {
 	);
 }
 
-function addNewLaunch(launch) {
-	latestLaunchNumber++;
-	launches.set(
-		latestLaunchNumber,
-		Object.assign(launch, {
-			success: true,
-			upcoming: true,
-			customers: ['Zero to Mastery', 'NASA'],
-			flightNumber: latestLaunchNumber,
-		})
-	);
-}
-
 function abortLaunch(launchId) {
 	const aborted = launches.get(launchId);
 	aborted.upcoming = false;

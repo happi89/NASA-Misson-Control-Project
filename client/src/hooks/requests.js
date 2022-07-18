@@ -1,4 +1,4 @@
-const API_URL = 'https://nasa-mission-control-api.herokuapp.com/';
+const API_URL = 'http://localhost:3000/';
 
 async function httpGetPlanets() {
 	const response = await fetch(`${API_URL}/planets`);
