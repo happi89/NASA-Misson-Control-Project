@@ -7,13 +7,17 @@ const launch = {
 	mission: 'name',
 	rocket: 'Kepler-1642 b',
 	launchDate: new Date('September 04, 2023'),
-	destination: 'Kepler-442 b',
+	target: 'Kepler-442 b',
 	customers: ['ZTM', 'NASA'],
 	upcoming: true,
 	success: true,
 };
 
 launches.set(launch.flightNumber, launch);
+
+function launchExists(launchId) {
+	return launches.has(launchId);
+}
 
 function getAllLaunches() {
 	return Array.from(launches.values());
@@ -45,7 +49,16 @@ function addNewLaunch(launch) {
 	);
 }
 
+function abortLaunch(launchId) {
+	const aborted = launches.get(launchId);
+	aborted.upcoming = false;
+	aborted.success = false;
+	return aborted;
+}
+
 module.exports = {
 	getAllLaunches,
 	addNewLaunch,
+	launchExists,
+	abortLaunch,
 };
