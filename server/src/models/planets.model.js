@@ -1,6 +1,6 @@
-const { parse } = require('csv-parse');
 const fs = require('fs');
 const path = require('path');
+const { parse } = require('csv-parse');
 
 const planets = require('./planets.mongo');
 
@@ -34,15 +34,15 @@ function loadPlanetsData() {
 				reject(err);
 			})
 			.on('end', async () => {
-				const planetsFound = (await getAllPlanets()).length;
-				console.log(`${planetsFound} habitable planets found!`);
+				const countPlanetsFound = (await getAllPlanets()).length;
+				console.log(`${countPlanetsFound} habitable planets found!`);
 				resolve();
 			});
 	});
 }
 
 async function getAllPlanets() {
-	return planets.find(
+	return await planets.find(
 		{},
 		{
 			_id: 0,
@@ -65,7 +65,7 @@ async function savePlanet(planet) {
 			}
 		);
 	} catch (err) {
-		console.error(`could not save planet ${err}`);
+		console.error(`Could not save planet ${err}`);
 	}
 }
 
